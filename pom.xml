@@ -12,7 +12,7 @@
 	<artifactId>springmvc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>springmvc</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Movies</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -47,18 +47,6 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>5.6.10.Final</version>
@@ -67,6 +55,11 @@
 			<groupId>com.mchange</groupId>
 			<artifactId>c3p0</artifactId>
 			<version>0.9.5.5</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mchange</groupId>
+			<artifactId>mchange-commons-java</artifactId>
+			<version>0.2.20</version>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
