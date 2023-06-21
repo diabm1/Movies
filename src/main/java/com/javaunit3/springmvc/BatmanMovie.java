@@ -1,6 +1,6 @@
 package com.javaunit3.springmvc;
 
-public class BatmanMovie implements Movie {
+public class BatmanMovie implements com.javaunit3.springmvc.Movie {
     @Override
     public String getTitle() {
         return "Batman: The Dark Knight";

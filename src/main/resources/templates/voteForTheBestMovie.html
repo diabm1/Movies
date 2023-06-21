@@ -1,15 +1,24 @@
-<!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Vote for Best Movie</title>
 </head>
 <body>
-<form action="/voteForBestMovie" method="get">
-  <input type="text" name="movieTitle" placeholder="Enter movie title">
-  <input type="submit" value="Vote">
-</form>
-<p>You voted for: <span th:text="${votedMovieTitle}"></span></p>
+<h2>Vote for Best Movie</h2>
 
+<form action="/voteForBestMovie" method="post">
+    <div>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required/>
+    </div>
+
+    <div>
+        <label for="movie">Select a Movie:</label>
+        <select id="movie" name="movieId">
+            <option th:each="movie : ${movies}" th:value="${movie.id}" th:text="${movie.title}"></option>
+        </select>
+    </div>
+
+    <button type="submit">Submit Vote</button>
+</form>
 </body>
 </html>

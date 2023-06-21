@@ -1,6 +1,8 @@
 package com.javaunit3.springmvc.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "movies")
@@ -19,6 +21,10 @@ public class MovieEntity {
 
     @Column(name = "genre")
     private String genre;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "movie_id")
+    private List<VoteEntity> votes = new ArrayList<>();
 
     // Default constructor (required by Hibernate)
     public MovieEntity() {
@@ -55,5 +61,13 @@ public class MovieEntity {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public void addVote(VoteEntity vote) {
+        votes.add(vote);
+    }
+
+    public List<VoteEntity> getVotes() {
+        return votes;
     }
 }

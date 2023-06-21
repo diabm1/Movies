@@ -1,7 +1,7 @@
 package com.javaunit3.springmvc;
 
 import com.javaunit3.springmvc.model.MovieEntity;
-import org.hibernate.SessionFactory;
+import com.javaunit3.springmvc.model.VoteEntity;
 import org.hibernate.cfg.Environment;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +18,7 @@ public class HibernateConfig {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setConfigLocation(getHibernateConfigFile());
-        sessionFactory.setAnnotatedClasses(MovieEntity.class);
+        sessionFactory.setAnnotatedClasses(MovieEntity.class, VoteEntity.class);
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }
@@ -34,6 +34,3 @@ public class HibernateConfig {
         return properties;
     }
 }
-
-
-
